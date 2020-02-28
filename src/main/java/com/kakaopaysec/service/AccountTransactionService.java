@@ -54,7 +54,15 @@ public class AccountTransactionService {
     }
 
     public List<Map<String, Object>> findByNotYearTrx(){
-        return accountTransactionRepository.findByNotYearTrx();
+        List<Map<String, Object>> resultList = new ArrayList<Map<String, Object>>();
+        for(Map<String, Object> noTrx : accountTransactionRepository.findByNotYearTrx()){
+            Map<String, Object> row = new LinkedHashMap<String, Object>();
+            row.put("year", noTrx.get("year"));
+            row.put("name", noTrx.get("name"));
+            row.put("acctNo", noTrx.get("accNo"));
+            resultList.add(row);
+        }
+        return resultList;
     }
 
 
@@ -104,7 +112,6 @@ public class AccountTransactionService {
         Map<String, Object> result = new LinkedHashMap<String, Object>();
         try{
             List<String> brNameList = transferBranName(brName);
-            System.out.println("지점카운트"+brNameList.size());
             if(brNameList.size() == 0){
                 throw new ServiceException("br code not found error", HttpStatus.NOT_FOUND);
             }

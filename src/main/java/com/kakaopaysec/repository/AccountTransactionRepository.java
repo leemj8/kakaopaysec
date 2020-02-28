@@ -36,7 +36,7 @@ public interface AccountTransactionRepository extends JpaRepository<AccountTrxDT
     List<Map<String, Object>> findByYearMaxSumAmt();
 
 
-    @Query(value = "SELECT ACC.YEAR, ACC.ACC_NM, ACC.ACC_NO, NVL(TRX_AMT,0) AS TRX_AMT FROM ( \n" +
+    @Query(value = "SELECT ACC.YEAR AS year, ACC.ACC_NM AS name , ACC.ACC_NO AS accNo FROM ( \n" +
                         "SELECT *\n" +
                         "FROM ACCOUNT_INFO CROSS JOIN \n" +
                         "(SELECT SUBSTR(TRX_DT, 0 ,4 ) YEAR FROM ACCOUNT_TRANSACTION GROUP BY YEAR) ) ACC LEFT OUTER JOIN \n" +
