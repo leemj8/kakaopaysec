@@ -34,14 +34,6 @@
  - KakaopaysecApplication 실행
 ```
 
-```
- $git clone https://github.com/leemj8/kakaopaysec.git
- $cd kakaopaysec
- $gradlew clean build
- $java -jar build/libs/kakaopaysec-0.0.1-SNAPSHOT.jar
- 
- 접속 Base URL : http://localhost:8080
-```
 
 ## 기능 요구사항
 - 2018년, 2019년 각 연도별 합계 금액이 가장 많은 고객을 추출하는 API 개발.(단, 취소여부가 ‘Y’ 거래는 취소된 거래임, 합계 금액은 거래금액에서 수수료를 차감한 금액임)
