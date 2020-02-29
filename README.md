@@ -26,7 +26,6 @@
   
 ## 빌드 및 실행하기
 ### 터미널 환경
-- Git, JAVA 설치
 ```
  - 프로젝트 zip 다운 후 압축해제
  - intellij > File > New > Project from Existing Sources... 선택
